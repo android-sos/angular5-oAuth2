@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+<style>
+            body{
+                font-family: arial;
+                margin: 0;
+            }
+            nav{
+                background: #ff5353;
+                padding: 20px 10px;
+            }
+            nav ul{
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            nav li{
+                list-style-type: none;
+                display: inline-block;
+                margin: 0 10px 0 0;
+            }
+            nav a{
+                color: #fff;
+                font-size: 18px;
+                background: rgba(255,255,255,0.2);
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+            }
+            main, header{
+                max-width: 960px;
+                margin: 30px auto;
+                padding: 0 10px;
+                color: #333;
+            }
+        </style>
+</head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Homepage</a></li>
+                <% if(user) { %>
+                <li><a href="/auth/logout">Logout</a></li>
+                <li><a href="/sales">Sales</a></li>
+                
+                <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <li><a href="/sales">Sales</a></li>
+                <% } %>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+        <header>
+            
+            <% if(user) { %>
+                <h1>Compras por mes</h1>
+                <h2>Compra en Dollar:</h2>
+                <h3>1. 240$</h3>
+                <h3>2. 605$</h3>
+                <h3>3. 150$</h3>
+                <h3>4. 700$</h3>
+                <h3>5. 900%</h3>
+            <% } else { %>
+                <h3>Area Restringida</h3>
+            <% } %>
+
+        </header>
+    </body>
+</html>
